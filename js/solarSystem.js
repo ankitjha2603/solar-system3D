@@ -227,7 +227,8 @@ gui.add(options, "Show path").onChange((e) => {
     dpath.visible = e;
   });
 });
-gui.add(options, "speed", 0, 20);
+const maxSpeed = new URL(window.location.href).searchParams.get("ms")*1
+gui.add(options, "speed", 0, maxSpeed?maxSpeed:20);
 
 //////////////////////////////////////
 
